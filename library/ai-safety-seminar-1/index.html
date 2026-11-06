@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta property="og:title" content="AI Safety Seminar 1, moved">
+
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://jaromirsvoboda.github.io/user-site-preview/library/ai-safety-seminar/1/">
+<link rel="icon" href="/user-site-preview/favicon.svg">
+<meta name="theme-color" content="#fdfcf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1d1f" media="(prefers-color-scheme: dark)">
+<title>AI Safety Seminar 1, moved · Jaromír Svoboda</title>
+<script defer src="/user-site-preview/usage-counts.js"></script>
+<style>
+:root { --fg: #1f2328; --muted: #59636e; --bg: #fdfcf9; --line: #d8dee4; --accent: #0b5cad; --box: #f3f1ea;
+        --explain-bg: #eef4fb; --explain-line: #6a9fd4; --explain-title: #24527f; --scale: 1; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --fg: #e6e6e6; --muted: #a0a7ae; --bg: #1c1d1f; --line: #3a3d41; --accent: #7cb7ff;
+    --box: #26282b; --explain-bg: #1f2a36; --explain-line: #4f83b8; --explain-title: #9cc6f2; }
+  :root:not([data-theme="light"]) img { background: #fff; border-radius: 4px; }
+}
+:root[data-theme="dark"] { --fg: #e6e6e6; --muted: #a0a7ae; --bg: #1c1d1f; --line: #3a3d41; --accent: #7cb7ff;
+  --box: #26282b; --explain-bg: #1f2a36; --explain-line: #4f83b8; --explain-title: #9cc6f2; }
+:root[data-theme="dark"] img { background: #fff; border-radius: 4px; }
+html { font-size: calc(100% * var(--scale)); }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg);
+       font: 1.125rem/1.62 Georgia, "Libertinus Serif", "Noto Serif", serif; }
+main { max-width: 50rem; margin: 0 auto; padding: 1.5rem 16px 4rem; }
+nav.crumbs { font: 15px/1.4 system-ui, sans-serif; color: var(--muted); margin-bottom: 1.5rem; }
+nav.crumbs a { color: var(--muted); }
+nav.site-nav { display: flex; flex-wrap: wrap; gap: .2rem 1rem; margin: .4rem 0 .75rem;
+               font: 14px/1.5 system-ui, sans-serif; color: var(--muted); }
+nav.site-nav a { color: var(--muted); }
+h1, h2, h3, h4 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.25; }
+h1.title { font-size: 2.1rem; margin: 0 0 .3rem; }
+p.meta { font: 15px/1.5 system-ui, sans-serif; color: var(--muted); margin: 0 0 1.2rem; }
+p.meta + p.source { margin-top: -.9rem; }
+h1 { font-size: 1.75rem; margin-top: 2.6rem; border-bottom: 1px solid var(--line); padding-bottom: .2rem; }
+h2 { font-size: 1.35rem; margin-top: 2rem; }
+h3 { font-size: 1.1rem; }
+a { color: var(--accent); }
+.skip { position: absolute; left: -999px; top: .5rem; z-index: 10; padding: .5rem 1rem;
+        background: var(--bg); font: 15px/1.5 system-ui, sans-serif; }
+.skip:focus { left: .5rem; outline: 2px solid var(--accent); outline-offset: 2px; }
+#content { scroll-margin-top: 4rem; }
+#content:focus { outline: 2px solid var(--accent); outline-offset: 4px; }
+blockquote { margin: 1rem 0; padding: .2rem 1rem; border-left: 4px solid var(--line); color: var(--muted); font-style: italic; }
+table { border-collapse: collapse; width: 100%; font-size: .85em; margin: 1rem 0; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--line); padding: .35rem .5rem; vertical-align: top; text-align: left; }
+th { background: var(--box); }
+figure { margin: 1.6rem 0; }
+figure img, p > img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+figcaption { font-size: .9em; color: var(--muted); font-style: italic; margin-top: .5rem; }
+code { font-size: .9em; }
+.downloads { background: var(--box); border: 1px solid var(--line); border-radius: 8px; padding: .8rem 1rem; margin: 0 0 1.8rem;
+             font: 15px/1.5 system-ui, sans-serif; }
+.downloads strong { display: block; margin-bottom: .3rem; }
+.downloads a { display: inline-block; margin: .15rem 1.2rem .15rem 0; }
+nav#TOC { font: 15px/1.5 system-ui, sans-serif; background: var(--box); border-radius: 8px; padding: .6rem 1rem; margin-bottom: 2rem; }
+nav#TOC ul { padding-left: 1.2rem; margin: .2rem 0; }
+nav#TOC > ul { padding-left: .4rem; list-style: none; }
+ul.library { list-style: none; padding: 0; }
+ul.library li { margin: 0 0 1.4rem; }
+ul.library .summary { display: block; color: var(--muted); }
+.date, .language { font: 15px/1.5 system-ui, sans-serif; color: var(--muted); }
+.language { display: inline-block; margin-left: .4rem; padding: 0 .35rem; border: 1px solid var(--line); border-radius: 4px; }
+.reader { position: sticky; top: 0; z-index: 5; display: flex; justify-content: flex-end; gap: .35rem;
+          margin: 0 -16px 0; padding: .4rem 16px; background: var(--bg); font: 14px/1 system-ui, sans-serif; }
+.reader button { font: inherit; color: var(--fg); background: var(--box); border: 1px solid var(--line);
+                 border-radius: 6px; padding: .35rem .6rem; cursor: pointer; min-width: 2.4rem; }
+.reader button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.explainer { background: var(--explain-bg); border-left: 4px solid var(--explain-line); border-radius: 0 8px 8px 0;
+             padding: .7rem 1.1rem .5rem; margin: 1.4rem 0; font-size: .95em; }
+.explainer > .explainer-title { font: 600 .95rem/1.4 system-ui, sans-serif; color: var(--explain-title); margin: 0 0 .4rem; }
+.explainer > .explainer-title::before { content: "Explainer · "; font-weight: 700; letter-spacing: .02em; }
+span.pg { float: right; margin: 0 -.2rem 0 .6rem; font: 12px/1.6 system-ui, sans-serif; }
+span.pg a { color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 4px; padding: 0 .3rem; }
+span.pg a:hover { color: var(--accent); border-color: var(--accent); }
+.term { text-decoration: underline; text-decoration-color: var(--muted); text-underline-offset: .18em; }
+.textfigure { border-top: 1px solid var(--fg); border-bottom: 1px solid var(--fg); margin: 1.6rem 0; padding: .4rem 0; font-size: .95em; }
+.textfigure hr { border: 0; border-top: 1px solid var(--fg); margin: .6rem 0; }
+.textfigure > p:last-child { font-size: .9em; color: var(--muted); }
+.book-quote { border-left: 4px solid var(--line); background: var(--box); padding: .55rem 1rem; margin: 1.6rem 0 .6rem;
+              font-style: italic; color: var(--fg); }
+.book-quote p { margin: .2rem 0; }
+.book-quote .book-cite { display: block; font: normal 600 13px/1.5 system-ui, sans-serif; color: var(--muted); }
+.book-quote .book-cite a { color: var(--muted); }
+.book-ref { display: block; font: 13px/1.5 system-ui, sans-serif; color: var(--muted); margin: -.4rem 0 .8rem; }
+.book-ref a { color: var(--muted); }
+.unit-intro { display: block; font: 14px/1.5 system-ui, sans-serif; color: var(--muted); background: var(--box);
+              border-radius: 8px; padding: .5rem .8rem; margin-bottom: 1.5rem; }
+.explainer > .explainer-title::after { content: " (ours)"; font-weight: 400; color: var(--muted); }
+.part-label { font: 600 14px/1.4 system-ui, sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+nav.pager { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; font: 15px/1.4 system-ui, sans-serif; }
+nav.pager a { display: block; max-width: 48%; padding: .6rem .8rem; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; }
+nav.pager .next { margin-left: auto; text-align: right; }
+nav.pager small { display: block; color: var(--muted); }
+.bib p { padding-left: 1.5rem; text-indent: -1.5rem; }
+.term-index { column-width: 16rem; column-gap: 2rem; font-size: .95em; }
+.term-index p { margin: 0 0 .35rem; break-inside: avoid; }
+.mathwrap { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: .2rem 0; }
+footer { font: 14px/1.5 system-ui, sans-serif; color: var(--muted); border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1rem; }
+</style>
+<script>
+/* Reader preferences, per viewer: theme and text size. Storage may be unavailable; the page works without it. */
+(function () {
+  var root = document.documentElement, theme = "auto", scale = 1;
+  try { theme = localStorage.getItem("theme") || "auto"; scale = parseFloat(localStorage.getItem("scale")) || 1; } catch (e) {}
+  if (theme !== "auto") root.setAttribute("data-theme", theme);
+  root.style.setProperty("--scale", scale);
+  window.readerPrefs = {
+    theme: theme, scale: scale,
+    save: function () { try { localStorage.setItem("theme", this.theme); localStorage.setItem("scale", String(this.scale)); } catch (e) {} }
+  };
+})();
+</script>
+<meta http-equiv="refresh" content="0; url=../ai-safety-seminar/1/">
+<meta property="og:url" content="https://jaromirsvoboda.github.io/user-site-preview/library/ai-safety-seminar/1/">
+<meta name="robots" content="noindex, nofollow, noarchive">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<main>
+<div class="reader" role="toolbar" aria-label="Reading settings">
+<button type="button" id="font-down" aria-label="A&minus; (smaller text)">A&minus;</button>
+<button type="button" id="font-up" aria-label="A+ (larger text)">A+</button>
+<button type="button" id="theme" aria-label="Colour theme">Auto</button>
+</div>
+<header>
+<h1 class="title">AI Safety Seminar 1, moved</h1>
+
+
+</header>
+<article id="content" tabindex="-1">
+<p>This page has moved to <a href="../ai-safety-seminar/1/">AI Safety Seminar 1</a>.</p>
+</article>
+
+<footer>
+
+<p><a href="/user-site-preview/">jaromirsvoboda.github.io</a> · <a href="https://github.com/jaromirsvoboda/jaromirsvoboda.github.io">Source repository</a></p>
+</footer>
+</main>
+<script>
+(function () {
+  var p = window.readerPrefs, root = document.documentElement, names = { auto: "Auto", light: "Light", dark: "Dark" };
+  var order = ["auto", "light", "dark"], btn = document.getElementById("theme");
+  function apply() {
+    if (p.theme === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", p.theme);
+    root.style.setProperty("--scale", p.scale);
+    btn.textContent = names[p.theme];
+    btn.setAttribute("aria-label", "Colour theme: " + names[p.theme] + " (click to change)");
+    p.save();
+  }
+  btn.addEventListener("click", function () { p.theme = order[(order.indexOf(p.theme) + 1) % 3]; apply(); });
+  document.getElementById("font-up").addEventListener("click", function () { p.scale = Math.min(1.6, Math.round((p.scale + .1) * 10) / 10); apply(); });
+  document.getElementById("font-down").addEventListener("click", function () { p.scale = Math.max(.8, Math.round((p.scale - .1) * 10) / 10); apply(); });
+  apply();
+})();
+</script>
+<script>
+/* Scrollable equations need an explicit focus target (WCAG 2.1.1); only mark the
+   ones that actually scroll, and unmark them again when they stop. The overflow
+   scroller is the .mathwrap div (role=region is not allowed on <math>). */
+(function () {
+  function mark() {
+    document.querySelectorAll('.mathwrap').forEach(function (m, i) {
+      if (m.scrollWidth > m.clientWidth + 1) {
+        if (m.getAttribute("tabindex") !== "0") {
+          m.setAttribute("tabindex", "0");
+          m.setAttribute("role", "region");
+          m.setAttribute("aria-label", "Equation " + (i + 1) + ", scrollable");
+        }
+      } else if (m.getAttribute("tabindex") === "0") {
+        m.removeAttribute("tabindex");
+        m.removeAttribute("role");
+        m.removeAttribute("aria-label");
+      }
+    });
+  }
+  mark();
+  window.addEventListener("resize", mark);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(mark);
+})();
+</script>
+</body>
+</html>
